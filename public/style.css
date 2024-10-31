@@ -17,13 +17,12 @@ body {
 }
 
 body.light {
-  background-color: #f4f4f9;
-  color: #333;
+  background-image: url(./images/light_image.jpg);
+
 }
 
 body.dark {
-  background-color: #333;
-  color: #f4f4f9;
+  background-image: url(./images/dark_image.jpg);
 }
 
 /* Container styling */
