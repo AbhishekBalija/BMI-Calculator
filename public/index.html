@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI Calculator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>BMI Calculator</h1>
-    <form id="bmiForm">
-      <label for="weight">Weight (kg):</label>
-      <input type="number" id="weight" required>
-      
-      <label for="height">Height (cm):</label>
-      <input type="number" id="height" required>
+<body class="light">
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form id="bmi-form">
+            <label for="height">Height (in cm):</label>
+            <input type="number" id="height" required>
+            
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" required>
+            
+            <button type="submit">Calculate BMI</button>
+        </form>
+        <div id="result"></div>
+        <div id="category" data-category=""></div>
+    </div>
+    
+    <!-- Dark/Light mode toggle switch -->
+    <div id="theme-toggle-container">
+        <input type="checkbox" id="theme-toggle" class="checkbox">
+        <label for="theme-toggle" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
 
-      <button type="submit">Calculate BMI</button>
-    </form>
-    <div id="result"></div>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

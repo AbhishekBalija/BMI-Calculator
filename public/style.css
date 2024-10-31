@@ -1,58 +1,170 @@
-/* style.css */
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
+/* Light and dark themes */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-  }
-  
-  .container {
-    text-align: center;
-    background: #fff;
-    padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-  }
-  
-  h1 {
-    margin-bottom: 1em;
-    color: #333;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-top: 1em;
-    color: #666;
-  }
-  
-  input, button {
-    padding: 0.8em;
-    margin-top: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  #result {
-    margin-top: 1em;
-    font-size: 1.2em;
-    color: #333;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.3s ease;
+  margin: 0;
+}
+
+body.light {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+body.dark {
+  background-color: #333;
+  color: #f4f4f9;
+}
+
+/* Container styling */
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 2em;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .container {
+  background: #444;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  color: inherit;
+  margin-bottom: 1em;
+  font-family: 'brush script',cursive;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+label {
+  color: inherit;
+  font-weight: bold;
+  font-family:'Courier New', Courier, monospace;
+}
+
+input, button {
+  padding: 0.8em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+body.dark input {
+  background-color: #666;
+  color: #f4f4f9;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 1em;
+  font-size: 1.3em;
+}
+
+#category {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#category[data-category="Underweight"] {
+  color: #3498db;
+}
+
+#category[data-category="Normal weight"] {
+  color: #2ecc71;
+}
+
+#category[data-category="Overweight"] {
+  color: #e67e22;
+}
+
+#category[data-category="Obese"] {
+  color: #e74c3c;
+}
+
+/* Theme toggle switch styling */
+#theme-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-label i {
+  color: #f4f4f9;
+  font-size: 12px;
+}
+
+.checkbox-label .ball {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Dark mode toggle styles */
+body.dark .checkbox-label {
+  background-color: #007bff;
+}
+
+body.dark .checkbox-label .ball {
+  transform: translateX(24px);
+}
